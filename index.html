@@ -1,50 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <title>Frontend Mentor | Single Price Grid Component</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Single Price Grid Component</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Join our community
+    <style>
+      :root {
+        --cyan: hsl(179, 62%, 43%);
+        --bright-yellow: hsl(71, 73%, 54%);
+        --light-gray: hsl(204, 43%, 93%);
+        --grayish-blue: hsl(218, 22%, 67%);
+      }
 
-  30-day, hassle-free money back guarantee
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="price-grid">
+        <div class="hook">
+          <h1 class="title">Join our community</h1>
+          <p class="subtitle">30-day, hassle-free money back guarantee</p>
+          <p class="description">
+            Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers who
+            are serious about honing their skills.
+          </p>
+        </div>
+        <div class="pricing">
+          <h2>Monthly Subscription</h2>
+          <p>&dollar;29 per month</p>
+          <p>Full access for less than &dollar;1 a day</p>
+          <a href="#">Sign Up</a>
+        </div>
+        <div class="why-us">
+          <h2>Why Us</h2>
+          <ul role="list">
+            <li>Tutorials by industry experts</li>
+            <li>Peer & expert code review</li>
+            <li>Coding exercises</li>
+            <li>Access to our GitHub repos</li>
+            <li>Community forum</li>
+            <li>Flashcard decks</li>
+            <li>New videos every week</li>
+          </ul>
+        </div>
+      </article>
+    </main>
 
-  Gain access to our full library of tutorials along with expert code reviews. 
-  Perfect for any developers who are serious about honing their skills.
-
-  Monthly Subscription
-
-  &dollar;29 per month
-
-  Full access for less than &dollar;1 a day
-
-  Sign Up
-
-  Why Us
-
-  Tutorials by industry experts
-  Peer &amp; expert code review
-  Coding exercises
-  Access to our GitHub repos
-  Community forum
-  Flashcard decks
-  New videos every week
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="external">Frontend Mentor</a>. Coded
+        by <a href="https://joshjavier.com/" rel="author external">Josh Javier</a>.
+      </p>
+    </footer>
+  </body>
 </html>
