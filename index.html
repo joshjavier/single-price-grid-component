@@ -26,10 +26,14 @@
       }
 
       :root {
-        --cyan: hsl(179, 62%, 43%);
-        --bright-yellow: hsl(71, 73%, 54%);
-        --light-gray: hsl(204, 43%, 93%);
-        --grayish-blue: hsl(218, 22%, 67%);
+        --cyan: 179 62% 43%;
+        --bright-yellow: 71 73% 54%;
+        --light-gray: 204 43% 93%;
+        --grayish-blue: 218 22% 67%;
+        --card-shadow: 0px 1px 1.1px hsl(203deg 16% 58% / 0.36), 0px 3.3px 3.7px -0.8px hsl(203deg 16% 58% / 0.36),
+          0px 8.2px 9.2px -1.7px hsl(203deg 16% 58% / 0.36), 0px 20px 22.5px -2.5px hsl(203deg 16% 58% / 0.36);
+        --button-shadow: 0px 1px 1.1px hsl(179deg 68% 29% / 0.25), 0px 2.9px 3.3px -0.8px hsl(179deg 68% 29% / 0.25),
+          0px 7.1px 8px -1.7px hsl(179deg 68% 29% / 0.25), 0px 17px 19.1px -2.5px hsl(179deg 68% 29% / 0.25);
       }
 
       * {
@@ -44,7 +48,7 @@
       }
 
       body {
-        background-color: var(--light-gray);
+        background-color: hsl(var(--light-gray));
         padding: calc(72 / 16 * 1rem) calc(32 / 16 * 1rem);
         margin: 0;
         display: grid;
@@ -55,10 +59,11 @@
       /* Blocks */
       .price-grid {
         background-color: white;
-        color: var(--grayish-blue);
+        color: hsl(var(--grayish-blue));
         border-radius: calc(8 / 16 * 1rem);
         overflow: hidden;
         max-inline-size: calc(635 / 16 * 1rem);
+        box-shadow: var(--card-shadow);
       }
 
       .price-grid * {
@@ -68,11 +73,12 @@
       .price-grid .btn {
         text-decoration: none;
         font-weight: 700;
-        background-color: var(--bright-yellow);
+        background-color: hsl(var(--bright-yellow));
         padding-block: calc(15 / 16 * 1rem) calc(14 / 16 * 1rem);
         display: flex;
         justify-content: center;
         border-radius: calc(5 / 16 * 1rem);
+        box-shadow: var(--button-shadow);
       }
 
       .price-grid ul {
@@ -104,7 +110,7 @@
       }
 
       .price-grid section:not(.hook) {
-        background-color: var(--cyan);
+        background-color: hsl(var(--cyan));
         color: white;
       }
 
@@ -134,13 +140,13 @@
       }
 
       .price-grid .hook .title {
-        color: var(--cyan);
+        color: hsl(var(--cyan));
         margin-bottom: calc(25 / 16 * 1rem);
         font-size: clamp(1.25rem, 1rem + 1.25vw, 1.5rem);
       }
 
       .price-grid .hook .subtitle {
-        color: var(--bright-yellow);
+        color: hsl(var(--bright-yellow));
         line-height: 125%;
         font-size: clamp(0.9375rem, 0.75rem + 0.9375vw, 1.125rem);
         margin-block: 0 clamp(0.625rem, 1.5rem - 2.1875vw, 1.0625rem);
