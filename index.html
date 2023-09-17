@@ -8,11 +8,135 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
     <style>
+      /* karla-regular - latin */
+      @font-face {
+        font-display: swap;
+        font-family: 'Karla';
+        font-style: normal;
+        font-weight: 400;
+        src: url('fonts/karla-v30-latin-regular.woff2') format('woff2');
+      }
+      /* karla-700 - latin */
+      @font-face {
+        font-display: swap;
+        font-family: 'Karla';
+        font-style: normal;
+        font-weight: 700;
+        src: url('fonts/karla-v30-latin-700.woff2') format('woff2');
+      }
+
       :root {
         --cyan: hsl(179, 62%, 43%);
         --bright-yellow: hsl(71, 73%, 54%);
         --light-gray: hsl(204, 43%, 93%);
         --grayish-blue: hsl(218, 22%, 67%);
+      }
+
+      * {
+        box-sizing: border-box;
+        font-family: inherit;
+        line-height: inherit;
+        color: inherit;
+      }
+
+      html {
+        font-family: 'Karla', sans-serif;
+      }
+
+      body {
+        background-color: var(--light-gray);
+      }
+
+      /* Blocks */
+      .price-grid {
+        background-color: white;
+        color: var(--grayish-blue);
+        border-radius: calc(8 / 16 * 1rem);
+        overflow: hidden;
+        max-inline-size: calc(635 / 16 * 1rem);
+      }
+
+      .price-grid .btn {
+        text-decoration: none;
+        font-weight: 700;
+        background-color: var(--bright-yellow);
+        padding-block: calc(15 / 16 * 1rem) calc(14 / 16 * 1rem);
+        display: flex;
+        justify-content: center;
+        border-radius: calc(5 / 16 * 1rem);
+      }
+
+      .price-grid ul {
+        list-style-type: none;
+        padding-inline-start: 0;
+        font-size: calc(14 / 16 * 1rem);
+      }
+
+      .price-grid li + li {
+        margin-block-start: calc(4 / 16 * 1rem);
+      }
+
+      .price-grid .price {
+        display: flex;
+        align-items: center;
+        gap: calc(11 / 16 * 1rem);
+      }
+
+      .price-grid .price > :first-child {
+        font-size: calc(32 / 16 * 1rem);
+        font-weight: 700;
+      }
+
+      .price-grid section {
+        padding: calc(25 / 16 * 1rem) calc(24 / 16 * 1rem);
+      }
+
+      .price-grid section:not(.hook) {
+        background-color: var(--cyan);
+        color: white;
+      }
+
+      .price-grid section:nth-child(even) {
+        opacity: 0.85;
+      }
+
+      .price-grid section > :first-child {
+        margin-block: 0 calc(17 / 16 * 1rem);
+        font-size: calc(18 / 16 * 1rem);
+      }
+
+      .price-grid section > :last-child {
+        margin-block-end: 0;
+      }
+
+      .price-grid .hook {
+        padding-block: calc(28 / 16 * 1rem) calc(32 / 16 * 1rem);
+        font-size: calc(14 / 16 * 1rem);
+      }
+
+      .price-grid .hook > * + * {
+        margin-block: calc(17 / 16 * 1rem) 0;
+      }
+
+      .price-grid .hook .title,
+      .price-grid .hook .subtitle {
+        font-weight: 700;
+      }
+
+      .price-grid .hook .title {
+        color: var(--cyan);
+        margin-block: 0 calc(25 / 16 * 1rem);
+        font-size: calc(20 / 16 * 1rem);
+      }
+
+      .price-grid .hook .subtitle {
+        color: var(--bright-yellow);
+        line-height: 125%;
+        font-size: calc(15 / 16 * 1rem);
+      }
+
+      .price-grid .hook .description {
+        line-height: 185%;
       }
 
       .attribution {
@@ -22,36 +146,58 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
+
+      /* Utilities */
+      .switcher {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .switcher > * {
+        flex-grow: 1;
+        flex-basis: calc((var(--threshold, 30rem) - 100%) * 999);
+      }
+
+      .switcher > :nth-last-child(n + 3),
+      .switcher > :nth-last-child(n + 3) ~ * {
+        /* ↓ Switch to a vertical configuration if there are more than 2 child elements */
+        flex-basis: 100%;
+      }
     </style>
   </head>
   <body>
     <main>
       <article class="price-grid">
-        <div class="hook">
+        <section class="hook">
           <h1 class="title">Join our community</h1>
           <p class="subtitle">30-day, hassle-free money back guarantee</p>
           <p class="description">
             Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers who
             are serious about honing their skills.
           </p>
-        </div>
-        <div class="pricing">
-          <h2>Monthly Subscription</h2>
-          <p>&dollar;29 per month</p>
-          <p>Full access for less than &dollar;1 a day</p>
-          <a href="#">Sign Up</a>
-        </div>
-        <div class="why-us">
-          <h2>Why Us</h2>
-          <ul role="list">
-            <li>Tutorials by industry experts</li>
-            <li>Peer & expert code review</li>
-            <li>Coding exercises</li>
-            <li>Access to our GitHub repos</li>
-            <li>Community forum</li>
-            <li>Flashcard decks</li>
-            <li>New videos every week</li>
-          </ul>
+        </section>
+        <div class="switcher">
+          <section class="pricing">
+            <h2>Monthly Subscription</h2>
+            <p class="price">
+              <span>$29</span>
+              <span>per month</span>
+            </p>
+            <p>Full access for less than $1 a day</p>
+            <a href="#" class="btn">Sign Up</a>
+          </section>
+          <section class="why-us">
+            <h2>Why Us</h2>
+            <ul role="list">
+              <li>Tutorials by industry experts</li>
+              <li>Peer & expert code review</li>
+              <li>Coding exercises</li>
+              <li>Access to our GitHub repos</li>
+              <li>Community forum</li>
+              <li>Flashcard decks</li>
+              <li>New videos every week</li>
+            </ul>
+          </section>
         </div>
       </article>
     </main>
