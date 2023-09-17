@@ -56,6 +56,10 @@
         max-inline-size: calc(635 / 16 * 1rem);
       }
 
+      .price-grid * {
+        margin: 0;
+      }
+
       .price-grid .btn {
         text-decoration: none;
         font-weight: 700;
@@ -80,6 +84,7 @@
         display: flex;
         align-items: center;
         gap: calc(11 / 16 * 1rem);
+        margin-block-end: calc(7 / 16 * 1rem);
       }
 
       .price-grid .price > :first-child {
@@ -87,13 +92,10 @@
         font-weight: 700;
       }
 
-      .price-grid .price,
-      .price-grid .price ~ :not(.btn) {
-        margin-block: 0 calc(7 / 16 * 1rem);
-      }
-
       .price-grid section {
-        padding: calc(25 / 16 * 1rem) calc(24 / 16 * 1rem);
+        padding: clamp(1.5rem, 0.5rem + 5vw, 2.5rem);
+        display: flex;
+        flex-direction: column;
       }
 
       .price-grid section:not(.hook) {
@@ -114,13 +116,11 @@
         margin-block-end: 0;
       }
 
+      /* Hook section */
       .price-grid .hook {
-        padding-block: calc(28 / 16 * 1rem) calc(32 / 16 * 1rem);
-        font-size: calc(14 / 16 * 1rem);
-      }
-
-      .price-grid .hook > * + * {
-        margin-block: calc(17 / 16 * 1rem) 0;
+        padding-top: clamp(1.75rem, 1rem + 3.75vw, 2.5rem);
+        padding-bottom: clamp(2rem, 1.5rem + 2.5vw, 2.5rem);
+        font-size: clamp(0.875rem, 0.75rem + 0.625vw, 1rem);
       }
 
       .price-grid .hook .title,
@@ -130,24 +130,31 @@
 
       .price-grid .hook .title {
         color: var(--cyan);
-        margin-block: 0 calc(25 / 16 * 1rem);
-        font-size: calc(20 / 16 * 1rem);
+        margin-bottom: calc(25 / 16 * 1rem);
+        font-size: clamp(1.25rem, 1rem + 1.25vw, 1.5rem);
       }
 
       .price-grid .hook .subtitle {
         color: var(--bright-yellow);
         line-height: 125%;
-        font-size: calc(15 / 16 * 1rem);
+        font-size: clamp(0.9375rem, 0.75rem + 0.9375vw, 1.125rem);
+        margin-block: 0 clamp(0.625rem, 1.5rem - 2.1875vw, 1.0625rem);
       }
 
       .price-grid .hook .description {
         line-height: 185%;
       }
 
-      .price-grid .pricing > :last-child {
-        margin-block-start: calc(30 / 16 * 1rem);
+      /* Pricing section */
+      .price-grid .pricing > :nth-last-child(2) {
+        margin-block-end: calc(30 / 16 * 1rem);
       }
 
+      .price-grid .pricing > :last-child {
+        margin-block-start: auto;
+      }
+
+      /* Why Us section */
       .price-grid .why-us > :first-child {
         margin-block-end: calc(19 / 16 * 1rem);
       }
